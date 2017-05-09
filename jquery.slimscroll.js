@@ -224,7 +224,7 @@
             var $doc = $(document);
             var isDragg = true;
             var t = parseFloat(bar.css('top'));
-            pageY = e.pageY;
+            var pageY = e.pageY;
 
             $doc.bind("mousemove.slimscroll", function(e){
               var currTop = t + e.pageY - pageY;
