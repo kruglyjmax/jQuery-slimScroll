@@ -222,18 +222,18 @@
         if (o.railDraggable){
           bar.bind("mousedown", function(e) {
             var $doc = $(document);
-            isDragg = true;
-            t = parseFloat(bar.css('top'));
+            var isDragg = true;
+            var t = parseFloat(bar.css('top'));
             pageY = e.pageY;
 
             $doc.bind("mousemove.slimscroll", function(e){
-              currTop = t + e.pageY - pageY;
+              var currTop = t + e.pageY - pageY;
               bar.css('top', currTop);
               scrollContent(0, bar.position().top, false);// scroll content
             });
 
             $doc.bind("mouseup.slimscroll", function(e) {
-              isDragg = false;hideBar();
+              var isDragg = false;hideBar();
               $doc.unbind('.slimscroll');
             });
             return false;
